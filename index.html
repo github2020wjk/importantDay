@@ -43,6 +43,16 @@
         .timer b {
             color: rgb(253, 99, 125);
         }
+
+         .timer1 {
+            font-size: 180%;
+            line-height: 1.5;
+            margin: 1em 0;
+        }
+
+        .timer1 b {
+            color: rgb(253, 99, 125);
+        }
     </style>
 </head>
 
@@ -56,7 +66,7 @@
     </div>
     <h2>我们已经相爱了</h2>
     <div class="timer1">
-        <b id="d1"></b> Days <b id="h1"></b> Hours <b id="m1"></b> Minutes <b id="s1"></b> Seconds
+        <b id="d1"></b> Days <b id="hr"></b> Hours <b id="m1"></b> Minutes <b id="s1"></b> Seconds
     </div>
 </div>
 
@@ -91,9 +101,9 @@
         // 设置分钟
         start.setMinutes(29);
         var t1 = new Date().getTime() - start.getTime();
-        var h1 = ~~(t1 / 1000 / 60 / 60 % 24);
-        if (h1 < 10) {
-            h1 = "0" + h;
+        var hr = ~~(t1 / 1000 / 60 / 60 % 24);
+        if (hr < 10) {
+            hr = "0" + hr;
         }
         var m1 = ~~(t1 / 1000 / 60 % 60);
         if (m1 < 10) {
@@ -105,7 +115,7 @@
             s1 = "0" + s1;
         }
         document.getElementById('d1').innerHTML = ~~(t1 / 1000 / 60 / 60 / 24);
-        document.getElementById('h1').innerHTML = h1;
+        document.getElementById('hr').innerHTML = hr;
         document.getElementById('m1').innerHTML = m1;
         document.getElementById('s1').innerHTML = s1;
     }
